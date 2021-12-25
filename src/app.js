@@ -5,6 +5,12 @@
         arr.splice(toIndex, 0, element);
     }
 
+    function invalidatePositions(parts) {
+        for (var i = 0; i < parts.length; i++) {
+            parts[i]['position'] = i + 1
+        }
+    }
+
     var app = new Vue({
         el: "#app",
         data: {
@@ -31,10 +37,17 @@
                         console.log(`Unknown move part direction: ${direction}`)
                         break
                 }
+                invalidatePositions(this.parts)
             },
 
             removePart: function (part) {
-
+                let index = this.parts.indexOf(part)
+                if (index < 0) {
+                    console.log(`Can't find part = ${part}`)
+                    return
+                }
+                this.parts.splice(index, 1)
+                invalidatePositions(this.parts)
             },
 
             createConfig: function () {
@@ -42,6 +55,7 @@
             },
             addPart: function () {
                 this.parts.push({})
+                invalidatePositions(this.parts)
             }
         }
     })

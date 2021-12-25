@@ -4,6 +4,7 @@ Vue.component("story-part", {
             <div class="story-controls">
                 <div class="action-button secondary" v-on:click="$emit('move-part', part, 'up')">up</div>
                 <div class="action-button secondary" v-on:click="$emit('move-part', part, 'down')">down</div>
+                <div class="action-button secondary" v-on:click="$emit('remove-part', part)">Удалить</div>
             </div>
             <div class="form">
                 <div class="field">

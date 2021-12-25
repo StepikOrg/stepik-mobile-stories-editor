@@ -1,5 +1,5 @@
 body {
-    width: 1000px;
+    width: 1200px;
     margin: auto;
 
     font-size: 16px;
@@ -36,7 +36,7 @@ input {
 }
 
 .story-part .story-controls {
-    width: 80px;
+    width: 100px;
 }
 
 .story-part .story-controls .action-button {
