@@ -5,10 +5,23 @@
     <title>Stepik Stories Constructor</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
     <link rel="stylesheet" href="style.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="src/components/story-part.js"></script>
+
+    <script>
+        UPLOADCARE_LOCALE = "en";
+        UPLOADCARE_LIVE = false;
+        UPLOADCARE_TABS = "file url dropbox facebook vk gdrive box skydrive instagram evernote";
+        UPLOADCARE_AUTOSTORE = true;
+        UPLOADCARE_PUBLIC_KEY = "e7a075ad8dc9e3a1ec61";
+        UPLOADCARE_CDN_BASE = 'https://ucarecdn.com/';
+        UPLOADCARE_MANUAL_START = true;
+        UPLOADCARE_EFFECTS = ['crop', 'rotate', 'mirror', 'flip', 'enhance'];
+    </script>
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
 
     <title>Редактор историй v1</title>
 </head>
