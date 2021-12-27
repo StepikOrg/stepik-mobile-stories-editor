@@ -1,50 +1,53 @@
-.story-part .preview {
+.preview {
     width: 720px;
     display: flex;
     padding: 2px 0;
 }
 
-.story-part .preview .device {
+.preview .device {
     float: left;
     width: 360px;
     height: 780px;
+
     border: 1px solid #CCCCCC;
     margin: 2px 0 2px 4px;
     position: relative;
+}
 
+.device {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.story-part .preview .device .overlay {
+.device .overlay {
     position: absolute;
     width: 100%;
     height: 50%;
 }
 
-.story-part .preview .device .overlay.top {
+.device .overlay.top {
     top: 0;
     background: linear-gradient(rgba(0, 0, 0, 222), transparent);
 }
 
-.story-part .preview .device .overlay.bottom {
+.device .overlay.bottom {
     bottom: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 222));
 }
 
-.story-part .preview .device .hint {
+.device .hint {
     position: absolute;
     top: 0;
     color: #FFFFFF;
     font-size: 0.5em;
 }
 
-.story-part .preview .device.android {
+.device.android {
     font-family: AndroidStoriesFont, ui-serif;
 }
 
-.story-part .preview .device.android .storyTitle {
+.device.android .storyTitle {
     position: absolute;
     top: 0;
 
@@ -58,7 +61,7 @@
     margin-right: 24px;
 }
 
-.story-part .preview .device.android .storyBottom {
+.device.android .storyBottom {
     position: absolute;
     bottom: 72px;
 
@@ -67,7 +70,7 @@
 
 }
 
-.story-part .preview .device.android .storyBottom .storyText {
+.device.android .storyBottom .storyText {
     font-family: AndroidStoriesFont, ui-serif;
     font-size: 22px;
     text-align: left;
@@ -76,12 +79,12 @@
     margin-bottom: 24px;
 }
 
-.story-part .preview .device.android .storyBottom .storyButtonContainer {
+.device.android .storyBottom .storyButtonContainer {
     display: block;
     margin-bottom: 24px;
 }
 
-.story-part .preview .device.android .storyBottom .storyButton {
+.device.android .storyBottom .storyButton {
     min-height: 48px;
     min-width: 88px;
     box-sizing: border-box;
@@ -96,6 +99,6 @@
     border-radius: 24px;
 }
 
-.story-part .preview .ios {
+.device.ios {
 
 }

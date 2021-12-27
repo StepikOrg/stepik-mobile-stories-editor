@@ -41,6 +41,9 @@
             },
 
             removePart: function (part) {
+                if (!confirm("Вы уверены, что хотите удалить часть " + part.position)) {
+                    return;
+                }
                 let index = this.parts.indexOf(part)
                 if (index < 0) {
                     console.log(`Can't find part = ${part}`)

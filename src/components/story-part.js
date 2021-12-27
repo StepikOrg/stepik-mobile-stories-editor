@@ -3,8 +3,8 @@ Vue.component("story-part", {
         <div class="story-part">
             
             <div class="story-controls">
-                <div class="action-button secondary" v-on:click="$emit('move-part', part, 'up')">up</div>
-                <div class="action-button secondary" v-on:click="$emit('move-part', part, 'down')">down</div>
+                <div class="action-button secondary" v-on:click="$emit('move-part', part, 'up')">⬆</div>
+                <div class="action-button secondary" v-on:click="$emit('move-part', part, 'down')">⬇</div>
                 <div class="action-button secondary" v-on:click="$emit('remove-part', part)">Удалить</div>
             </div>
             <div class="form">
@@ -31,7 +31,7 @@ Vue.component("story-part", {
                     <select v-model="part.type" v-on:change="updateType">
                         <option disabled value="">Выберите один из вариантов</option>
                         <option value="text">Текст (+ кнопка опционально)</option>
-                        <option value="feedback">Форма с обратной связью</option>
+                        <option disabled value="feedback">Форма с обратной связью (пока не поддерживается)</option>
                     </select>
                 </div>
                 <div v-if="part.text">
@@ -73,41 +73,8 @@ Vue.component("story-part", {
 <!--              <p>{{ JSON.stringify(part) }}</p>-->
             </div>
             <div class="preview">
-                <div class="device android" 
-                     v-bind:style="{ 'background-image': 'url(' + part.image + ')' }"
-                >
-                    <div class="overlay top"></div>
-                    <div class="overlay bottom"></div>
-                    <div class="hint">Android</div>
-                    
-                    <div class="storyTitle" v-if="part.text" v-bind:style="{ color: '#' + part.text.text_color }">
-                        {{ part.text.title }}
-                    </div>
-                  
-                    <div class="storyBottom" v-if="part.text">
-                        <div class="storyText" 
-                             v-if="part.text.text" 
-                             v-bind:style="{ color: '#' + part.text.text_color }">{{ part.text.text }}</div>
-                        <div class="storyButtonContainer">
-                            <a class="storyButton"
-                                v-if="part.button"
-                                v-bind:href="part.button.url"
-                                target="_blank"
-                                v-bind:style="{ color: '#' + part.button.text_color, 'background-color': '#' + part.button.background_color }"
-                            >
-                                {{ part.button.title }}
-                            </a>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="device ios" 
-                     v-bind:style="{ 'background-image': 'url(' + part.image + ')' }"
-                >
-                    <div class="overlay top"></div>
-                    <div class="overlay bottom"></div>
-                    <div class="hint">iOS</div>
-                </div>
+                <device-android v-bind:part="part"></device-android>
+                <device-ios v-bind:part="part"></device-ios>
             </div>
         </div>
     `,
