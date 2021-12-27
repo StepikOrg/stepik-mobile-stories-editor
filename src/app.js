@@ -15,7 +15,8 @@
         el: "#app",
         data: {
             parts: [],
-            storyPreview: undefined
+            storyPreview: undefined,
+            storyPreviewIndex: undefined
         },
         methods: {
             movePart: function (part, direction) {
@@ -70,10 +71,18 @@
             },
 
             startStoryPreview: function () {
-                this.storyPreview = this.parts[0]
+                this.storyPreview = {
+                    index: 0
+                }
             },
             stopStoryPreview: function () {
                 this.storyPreview = undefined
+            },
+            nextStoryPreview: function () {
+                this.storyPreview.index = (this.storyPreview.index + 1) % this.parts.length
+            },
+            prevStoryPreview: function () {
+                this.storyPreview.index = (this.storyPreview.index - 1 + this.parts.length) % this.parts.length
             }
         }
     })

@@ -34,7 +34,7 @@
 <body>
 
     <div id="app">
-        <div class="main">
+        <div class="main" v-if="!storyPreview">
             <h2>Редактор историй v1</h2>
             <div class="story-parts">
                 <story-part
@@ -50,15 +50,20 @@
 
             <div class="controls">
                 <div class="action-button inline" v-on:click="addPart">Добавить часть</div>
-                <div class="action-button inline" v-on:click="startStoryPreview" v-if="parts.length > 0">Превью</div>
+                <div class="action-button inline" v-on:click="startStoryPreview" v-if="parts.length > 0">Посмотреть историю на весь экран</div>
             </div>
             <div class="out">
                 <textarea disabled>{{ createConfig() }}</textarea>
             </div>
         </div>
 
-        <div class="story-preview" v-if="storyPreview" v-on:click="stopStoryPreview">
-            <device-android v-bind:part="storyPreview"></device-android>
+        <div class="story-preview"
+             v-if="storyPreview"
+        >
+            <device-android v-bind:part="parts[storyPreview.index]"></device-android>
+            <div class="close" v-on:click="stopStoryPreview">❌</div>
+            <div class="move left" v-on:click="prevStoryPreview">⬅️</div>
+            <div class="move right" v-on:click="nextStoryPreview">➡️️</div>
         </div>
     </div>
 
