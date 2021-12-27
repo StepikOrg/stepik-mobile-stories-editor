@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="res/style/main.css" />
     <link rel="stylesheet" href="res/style/form.css" />
     <link rel="stylesheet" href="res/style/preview.css" />
+    <link rel="stylesheet" href="res/style/story-preview.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="src/components/device-android.js"></script>
@@ -33,24 +34,31 @@
 <body>
 
     <div id="app">
-        <h2>Редактор историй v1</h2>
-        <div class="story-parts">
-            <story-part
-                v-for="part in parts"
-                v-bind:part="part"
-                v-on:move-part="movePart"
-                v-on:remove-part="removePart"
-                v-bind:key="part.position"
-            >
+        <div class="main">
+            <h2>Редактор историй v1</h2>
+            <div class="story-parts">
+                <story-part
+                        v-for="part in parts"
+                        v-bind:part="part"
+                        v-on:move-part="movePart"
+                        v-on:remove-part="removePart"
+                        v-bind:key="part.position"
+                >
 
-            </story-part>
+                </story-part>
+            </div>
+
+            <div class="controls">
+                <div class="action-button inline" v-on:click="addPart">Добавить часть</div>
+                <div class="action-button inline" v-on:click="startStoryPreview" v-if="parts.length > 0">Превью</div>
+            </div>
+            <div class="out">
+                <textarea disabled>{{ createConfig() }}</textarea>
+            </div>
         </div>
 
-        <div class="controls">
-            <div class="action-button inline" v-on:click="addPart">Добавить часть</div>
-        </div>
-        <div class="out">
-            <textarea disabled>{{ createConfig() }}</textarea>
+        <div class="story-preview" v-if="storyPreview" v-on:click="stopStoryPreview">
+            <device-android v-bind:part="storyPreview"></device-android>
         </div>
     </div>
 

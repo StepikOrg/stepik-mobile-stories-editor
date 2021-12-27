@@ -1,11 +1,15 @@
 body {
-    width: 1400px;
-    margin: auto;
+    width: 100%;
 
     font-size: 16px;
 
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-user-select: none;
+}
+
+.main {
+    width: 1400px;
+    margin: auto;
 }
 
 input {

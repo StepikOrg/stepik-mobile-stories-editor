@@ -14,7 +14,8 @@
     var app = new Vue({
         el: "#app",
         data: {
-            parts: []
+            parts: [],
+            storyPreview: undefined
         },
         methods: {
             movePart: function (part, direction) {
@@ -66,6 +67,13 @@
                     feedback: undefined
                 })
                 invalidatePositions(this.parts)
+            },
+
+            startStoryPreview: function () {
+                this.storyPreview = this.parts[0]
+            },
+            stopStoryPreview: function () {
+                this.storyPreview = undefined
             }
         }
     })
