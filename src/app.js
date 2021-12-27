@@ -15,8 +15,7 @@
         el: "#app",
         data: {
             parts: [],
-            storyPreview: undefined,
-            storyPreviewIndex: undefined
+            storyPreview: undefined
         },
         methods: {
             createConfig: function () {

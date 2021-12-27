@@ -13,7 +13,7 @@ Vue.component("story-part", {
                 </div>
                 <div class="field">
                     <div class="label">Длительность (в секундах) *</div>
-                    <input class="input" type="number" placeholder="15" required v-model="part.duration"/>
+                    <input class="input" type="number" placeholder="15" required v-model.number="part.duration"/>
                 </div>
                 <div class="field">
                     <div class="label">Фоновая картинка *</div>
