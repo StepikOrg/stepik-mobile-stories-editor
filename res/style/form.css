@@ -28,6 +28,20 @@
     box-sizing: border-box;
 }
 
+.story-part .form textarea.input {
+    min-height: 120px;
+    width: 100%;
+    padding: 8px;
+    font-size: 0.8em;
+    color: #333;
+    border: none;
+    background: #F5F5F5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    line-height: 1.5em;
+}
+
 .story-part .form .status {
     font-size: 0.8em;
     margin-top: 8px;

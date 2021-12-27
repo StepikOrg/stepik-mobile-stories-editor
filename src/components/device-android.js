@@ -25,7 +25,7 @@ Vue.component("device-android", {
                         {{ part.button.title }}
                     </a>
                 </div>
-          </div>
+            </div>
         </div>
     `,
     props: ['part']

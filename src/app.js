@@ -84,9 +84,10 @@
             },
 
 
-            startStoryPreview: function () {
+            startStoryPreview: function (typeName) {
                 this.storyPreview = {
-                    index: 0
+                    index: 0,
+                    type: typeName
                 }
             },
             stopStoryPreview: function () {

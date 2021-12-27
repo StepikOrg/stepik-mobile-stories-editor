@@ -99,6 +99,53 @@
     border-radius: 24px;
 }
 
-.device.ios {
+.device.ios { }
 
+.device.ios .storyTitle {
+    position: absolute;
+    top: 0;
+
+    font-family: iOSTitleFont, ui-serif;
+    font-size: 26px;
+    text-align: left;
+
+    margin-top: 60px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.device.ios .storyBottom {
+    position: absolute;
+    bottom: 72px;
+
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.device.ios .storyBottom .storyText {
+    font-family: iOSTitleFont, ui-serif;
+    font-size: 20px;
+    text-align: left;
+
+    margin-bottom: 36px;
+}
+
+.device.ios .storyBottom .storyButtonContainer {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.device.ios .storyBottom .storyButton {
+    min-height: 48px;
+    min-width: 88px;
+    box-sizing: border-box;
+
+    font-family: iOSButtonFont, ui-serif;
+    font-size: 17px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+
+    padding: 15px 16px;
+    border-radius: 24px;
 }

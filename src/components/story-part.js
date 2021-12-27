@@ -41,7 +41,7 @@ Vue.component("story-part", {
                     </div>
                     <div class="field">
                         <div class="label">Текст</div>
-                        <input class="input" type="text" placeholder="Теперь можно запустить и проверить свой код перед отправкой решения" v-model="part.text.text"/>
+                        <textarea class="input" placeholder="Теперь можно запустить и проверить свой код перед отправкой решения" v-model="part.text.text"/>
                     </div>
                     <div class="field">
                         <div class="label">Цвет текста (в hex формате без #)</div>

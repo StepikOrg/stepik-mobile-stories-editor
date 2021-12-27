@@ -49,9 +49,10 @@
             </div>
 
             <div class="controls">
-                <div class="action-button inline" v-on:click="importConfig">Редактировать сущеуствующую историю</div>
                 <div class="action-button inline" v-on:click="addPart">Добавить часть</div>
-                <div class="action-button inline" v-on:click="startStoryPreview" v-if="parts.length > 0">Посмотреть историю на весь экран</div>
+                <div class="action-button inline" v-on:click="importConfig">Редактировать сущеуствующую историю</div>
+                <div class="action-button inline" v-on:click="startStoryPreview('android')" v-if="parts.length > 0">Посмотреть историю на весь экран (Android)</div>
+                <div class="action-button inline" v-on:click="startStoryPreview('ios')" v-if="parts.length > 0">Посмотреть историю на весь экран (iOS)</div>
             </div>
             <div class="out">
                 <div>
@@ -64,7 +65,8 @@
         <div class="story-preview"
              v-if="storyPreview"
         >
-            <device-android v-bind:part="parts[storyPreview.index]"></device-android>
+            <device-android v-bind:part="parts[storyPreview.index]" v-if="storyPreview.type === 'android'"></device-android>
+            <device-ios v-bind:part="parts[storyPreview.index]" v-if="storyPreview.type === 'ios'"></device-ios>
             <div class="close" v-on:click="stopStoryPreview">❌</div>
             <div class="move left" v-on:click="prevStoryPreview">⬅️</div>
             <div class="move right" v-on:click="nextStoryPreview">➡️️</div>

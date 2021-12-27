@@ -2,3 +2,13 @@
     font-family: 'AndroidStoriesFont'; /*a name to be used later*/
     src: url('./android_stories_bold.ttf'); /*URL to font*/
 }
+
+@font-face {
+    font-family: 'iOSTitleFont';
+    src: url('./SFProDisplay-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'iOSButtonFont';
+    src: url('./SFProText-Regular.ttf');
+}
