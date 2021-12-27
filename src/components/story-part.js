@@ -81,7 +81,7 @@ Vue.component("story-part", {
     data: function () {
         return {
             imageUploadStatus: undefined,
-            withButton: false
+            withButton: this.part.button !== undefined
         }
     },
     props: ['part'],

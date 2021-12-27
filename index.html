@@ -49,11 +49,15 @@
             </div>
 
             <div class="controls">
+                <div class="action-button inline" v-on:click="importConfig">Редактировать сущеуствующую историю</div>
                 <div class="action-button inline" v-on:click="addPart">Добавить часть</div>
                 <div class="action-button inline" v-on:click="startStoryPreview" v-if="parts.length > 0">Посмотреть историю на весь экран</div>
             </div>
             <div class="out">
-                <textarea disabled>{{ createConfig() }}</textarea>
+                <div>
+                    <textarea disabled>{{ createConfig() }}</textarea>
+                </div>
+                <div class="action-button inline" v-on:click="copyConfig">Скопировать</div>
             </div>
         </div>
 

@@ -19,6 +19,47 @@
             storyPreviewIndex: undefined
         },
         methods: {
+            createConfig: function () {
+                return JSON.stringify(this.parts, null, 4)
+            },
+            copyConfig: function () {
+                let config = JSON.stringify(this.parts)
+                navigator.clipboard.writeText(config)
+            },
+            importConfig: function () {
+                let configJson = prompt("Введите конфигурацию истории (поле PARTS в админке)", "")
+                if (configJson.length > 0) {
+                    try {
+                        this.parts = JSON.parse(configJson)
+                    } catch (e) {
+                        console.log("Неверная конфигурация")
+                    }
+                }
+            },
+
+            addPart: function () {
+                this.parts.push({
+                    duration: 15,
+                    image: undefined,
+                    type: undefined,
+                    text: undefined,
+                    button: undefined,
+                    feedback: undefined
+                })
+                invalidatePositions(this.parts)
+            },
+            removePart: function (part) {
+                if (!confirm("Вы уверены, что хотите удалить часть " + part.position)) {
+                    return;
+                }
+                let index = this.parts.indexOf(part)
+                if (index < 0) {
+                    console.log(`Can't find part = ${part}`)
+                    return
+                }
+                this.parts.splice(index, 1)
+                invalidatePositions(this.parts)
+            },
             movePart: function (part, direction) {
                 let index = this.parts.indexOf(part)
                 if (index < 0) {
@@ -42,33 +83,6 @@
                 invalidatePositions(this.parts)
             },
 
-            removePart: function (part) {
-                if (!confirm("Вы уверены, что хотите удалить часть " + part.position)) {
-                    return;
-                }
-                let index = this.parts.indexOf(part)
-                if (index < 0) {
-                    console.log(`Can't find part = ${part}`)
-                    return
-                }
-                this.parts.splice(index, 1)
-                invalidatePositions(this.parts)
-            },
-
-            createConfig: function () {
-                return JSON.stringify(this.parts, null, 4)
-            },
-            addPart: function () {
-                this.parts.push({
-                    duration: 15,
-                    image: undefined,
-                    type: undefined,
-                    text: undefined,
-                    button: undefined,
-                    feedback: undefined
-                })
-                invalidatePositions(this.parts)
-            },
 
             startStoryPreview: function () {
                 this.storyPreview = {
