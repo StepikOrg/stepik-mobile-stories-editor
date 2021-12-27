@@ -33,17 +33,69 @@
     background: linear-gradient(transparent, rgba(0, 0, 0, 222));
 }
 
-.story-part .preview .device.android {
-    font-family: AndroidStoriesFont, ui-serif;
-}
-
-.story-part .preview .ios {
-
-}
-
 .story-part .preview .device .hint {
     position: absolute;
     top: 0;
     color: #FFFFFF;
-    font-size: 0.8em;
+    font-size: 0.5em;
+}
+
+.story-part .preview .device.android {
+    font-family: AndroidStoriesFont, ui-serif;
+}
+
+.story-part .preview .device.android .storyTitle {
+    position: absolute;
+    top: 0;
+
+    font-family: AndroidStoriesFont, ui-serif;
+    font-size: 26px;
+    text-align: left;
+    text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+
+    margin-top: 60px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.story-part .preview .device.android .storyBottom {
+    position: absolute;
+    bottom: 72px;
+
+    margin-left: 24px;
+    margin-right: 24px;
+
+}
+
+.story-part .preview .device.android .storyBottom .storyText {
+    font-family: AndroidStoriesFont, ui-serif;
+    font-size: 22px;
+    text-align: left;
+    text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 4px;
+
+    margin-bottom: 24px;
+}
+
+.story-part .preview .device.android .storyBottom .storyButtonContainer {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.story-part .preview .device.android .storyBottom .storyButton {
+    min-height: 48px;
+    min-width: 88px;
+    box-sizing: border-box;
+
+    font-family: sans-serif;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+
+    padding: 15px 16px;
+    border-radius: 24px;
+}
+
+.story-part .preview .ios {
+
 }

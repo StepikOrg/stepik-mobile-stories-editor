@@ -54,7 +54,14 @@
                 return JSON.stringify(this.parts, null, 4)
             },
             addPart: function () {
-                this.parts.push({})
+                this.parts.push({
+                    duration: 15,
+                    image: undefined,
+                    type: undefined,
+                    text: undefined,
+                    button: undefined,
+                    feedback: undefined
+                })
                 invalidatePositions(this.parts)
             }
         }
